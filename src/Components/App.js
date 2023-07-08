@@ -1,13 +1,10 @@
-
+import React from 'react';
 import './App.css';
-
+import  About from './About';
 function App() {
   return (
     <div >
-     
-          Learn React JS jj
-        
-      
+        <About></About>
     </div>
   );
 }
