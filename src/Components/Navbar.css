@@ -1,7 +1,7 @@
 .phone{
   display: flex;
   background-color: #fafafa;
-  color: #5f5f5f;
+  color: #949292;
   font-weight: bold;
   height: 30px;
   font-size: x-small;
@@ -17,10 +17,14 @@
   justify-content: space-evenly;
   align-items: center;
   height: 90px;
+  margin-left: 50px;
 }
-
+/* style={{ backgroundColor: '#2c353d'}} */
 .social FontAwesomeIcon{
   padding: 20px;
+}
+.items{
+  color:white;
 }
 
 .logo img{

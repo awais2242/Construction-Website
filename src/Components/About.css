@@ -1,4 +1,50 @@
-.Why-Us{
-   text-align: center;
-   
+
+.about-section {
+
+   margin-top: 40px;
+   margin-bottom: 50px;
 }
+
+.container_background {
+   background-color: #2c353d;
+   background-image: url(../images/house-wire-model-fade-white-1500x1085.png);
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+       .h2-col1 {
+          color: #f3f3f3;
+          font-size: 20px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          margin-left: 50px;
+       }
+       .h2-hed{
+         text-align: center;
+         color: #f8f5f5;
+         padding-top: 70px;
+         text-size-adjust: 2px;
+         font-size: 32px;
+         white-space: normal;
+       }
+   
+       .h2-col2 {
+          color: #f3f3f3;
+          font-size: 20px;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          margin-left: 50px;
+       }
+   
+       p {
+          color: #f8f5f5;
+          font-size: 12px;
+          margin-bottom: 50px;
+          margin-left: 50px;
+          font-weight: 400;
+       }
+
+      .hr-style{
+         width:50px;
+         color:green;
+      }
