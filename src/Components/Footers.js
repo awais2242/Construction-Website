@@ -10,11 +10,12 @@ const Footers=()=>{
     return(
         <div>
 			<div className="adjust">
-				<p>If you’d like to get in touch with us to learn more, please contact us:</p>
+				<h5><b><p>If you’d like to get in touch with us to learn more, please contact us:</p></b></h5>
 			</div>
 			<div className="button">Contact Us</div>
   	 	            <div className="row">
   	 		            <div className="footer-col">
+							{'/n'}
   	 			            <h4>Contact Us</h4>
   	 			            <ul>
   	 				            <li><a href="localhost:3000/"><b><h5>177 E Colorado Blvd. Suite 200</h5></b></a></li>
@@ -23,7 +24,7 @@ const Footers=()=>{
   	 				            <li><a href="localhost:3000/"><h6>818.351.3570</h6></a></li>
   	 			            </ul>
   	 		            </div>
-  	 		            <div className="footer-col">
+						   <div className="footer-col">
   	 			            <h4>SHOP DRAWING SERVICES:</h4>
   	 			            <ul>
   	 				            <li><a href="localhost:3000/"><h5>Max Drafting:</h5></a></li>
@@ -36,7 +37,7 @@ const Footers=()=>{
         			<div className="left-section">
           				<p>&copy; Copyright - Max TakeOffs.</p>
         			</div>
-        		<div className="right-section">
+        		<div className="social-links">
           			<a href="https://www.facebook.com">
             		<FontAwesomeIcon icon={faFacebook} className="social-icon" />
           			</a>
