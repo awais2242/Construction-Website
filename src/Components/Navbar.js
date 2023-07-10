@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -17,6 +17,7 @@ import {
 
 const Navbar = () => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleButtonClick = () => {
     setIsContainerOpen(true);
@@ -24,6 +25,23 @@ const Navbar = () => {
   const handleCloseClick = () => {
     setIsContainerOpen(false);
   };
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth > 780) {
+      setIsContainerOpen(false);
+    }
+  }, [windowWidth]);
 
   return (
     <div>
