@@ -102,8 +102,8 @@
     padding: 8px;
     top: 18px;
     right: 18px;
-    /* z-index: 99; */
-    opacity: 0;
+    z-index: 999; 
+    opacity: 1;
   }
 
   .close:hover{
@@ -140,7 +140,7 @@
     background-color: white;
     z-index: 5;
     padding-top: 90px;
-    opacity: 0;
+    opacity: 1;
   }
 
   .menu-icon span{

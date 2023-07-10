@@ -17,15 +17,16 @@
           font-size: 20px;
           margin-bottom: 20px;
           margin-top: 20px;
-          margin-left: 50px;
+          margin-left: 100px;
        }
        .h2-hed{
          text-align: center;
          color: #f8f5f5;
          padding-top: 70px;
          text-size-adjust: 2px;
-         font-size: 32px;
+         font-size: 28px;
          white-space: normal;
+         word-spacing: 1px;
        }
    
        .h2-col2 {
@@ -33,14 +34,14 @@
           font-size: 20px;
           margin-bottom: 20px;
           margin-top: 20px;
-          margin-left: 50px;
+          margin-left: 100px;
        }
    
        p {
           color: #f8f5f5;
           font-size: 12px;
           margin-bottom: 50px;
-          margin-left: 50px;
+          margin-left: 100px;
           font-weight: 400;
        }
 
@@ -48,3 +49,28 @@
          width:50px;
          color:green;
       }
+.icon-style{
+   font-size: 58px;
+   bottom: 20px;
+   right: 100px;
+   left: 1000px;
+}
+.icon{
+   display: flex;
+   height: 50px;
+   width: 50px;
+   border: 1px solid rgb(175, 175, 175);
+   border-radius: 25px;
+   font-size: 24px;
+   color: white;
+   justify-content: center;
+   align-items: center;
+  
+   
+}
+.adjust{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 300px;
+}

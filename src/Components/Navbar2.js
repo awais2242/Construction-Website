@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faSearch} from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/logo.png";
 import "./Navbar.css";
 const Navbar2 = () => {
@@ -22,18 +22,19 @@ const Navbar2 = () => {
           <FontAwesomeIcon icon={faSearch} />
         </div>
       </div>
-        <nav class="navbar navbar-expand-lg" style={{ backgroundColor: '#2c353d'}}>
-            <div class="container-fluid text-success" >
-            <button class="navbar-toggler"
+        <nav class="navbar navbar-expand-lg" >
+            <div class="container-fluid" >
+            <button class="navbar-toggler ms-auto"
                         data-bs-toggle="collapse"
                         data-bs-target="#gfgnavbar">
                     <span class="navbar-toggler-icon">
+                    
                     </span>
                 </button>
                 <div class="collapse navbar-collapse ps-3" 
                      id="gfgnavbar">
                    
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                Home
