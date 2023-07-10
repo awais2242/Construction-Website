@@ -10,7 +10,7 @@
   padding-right: 10%;
 }
 body{
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .spacer{
   width: 30%;
