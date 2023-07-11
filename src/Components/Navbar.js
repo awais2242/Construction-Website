@@ -18,7 +18,11 @@ import {
 const Navbar = () => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+  const handleSearchIconClick = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
   const handleButtonClick = () => {
     setIsContainerOpen(true);
   };
@@ -100,9 +104,17 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <div className="search">
-            <FontAwesomeIcon icon={faSearch} />
-          </div>
+          <div  onClick={handleSearchIconClick}>
+        <FontAwesomeIcon icon={faSearch} />
+      </div>
+      {isSearchOpen && (
+        <div className="search-bar">
+         <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+        </div>
+      )}
           <div className="close" onClick={handleCloseClick}>
             <FontAwesomeIcon icon={faCircleXmark} />
           </div>
