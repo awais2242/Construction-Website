@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -19,7 +19,12 @@ const Navbar = () => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const handleSearchIconClick = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
 
   const handleButtonClick = () => {
     setIsContainerOpen(true);
@@ -27,6 +32,19 @@ const Navbar = () => {
   const handleCloseClick = () => {
     setIsContainerOpen(false);
   };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsSearchOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
@@ -68,31 +86,31 @@ const Navbar = () => {
           <div className="item">
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
-              <div className="triangle-right"></div>
+                <div className="triangle-right"></div>
                 Home
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
-              <div className="triangle-right"></div>
+                <div className="triangle-right"></div>
                 About
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
-              <div className="triangle-right"></div>
+                <div className="triangle-right"></div>
                 Services
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
-              <div className="triangle-right"></div>
+                <div className="triangle-right"></div>
                 Pricing & Plans
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
-              <div className="triangle-right"></div>
+                <div className="triangle-right"></div>
                 Example Projects
               </a>
             </div>
@@ -104,19 +122,32 @@ const Navbar = () => {
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
-              <div className="triangle-right"></div>
+                <div className="triangle-right"></div>
                 Request a Quote
               </a>
             </div>
           </div>
-          <div onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
-            <FontAwesomeIcon icon={faSearch} />
-            {isDropdownOpen && (
-        <div className="dropdown-menu">
-          
-          eeeeeeeeeeeeeeeeeee
-        </div>
-      )}
+          <div className="search-container" ref={dropdownRef}>
+            <div className="search-icon" onClick={handleSearchIconClick}>
+              <FontAwesomeIcon icon={faSearch} />
+            </div>
+            {isSearchOpen && (
+              <div className="search-dropdown">
+                <div className="search-form-wrapper">
+                  <form className="d-flex">
+                    <input
+                      className="search-input"
+                      type="search"
+                      placeholder="Search"
+                      aria-label="Search"
+                    />
+                    <div className="search-icon-2">
+                      <FontAwesomeIcon icon={faSearch} />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="close" onClick={handleCloseClick}>
