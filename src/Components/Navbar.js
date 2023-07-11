@@ -18,11 +18,9 @@ import {
 const Navbar = () => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  const handleSearchIconClick = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const handleButtonClick = () => {
     setIsContainerOpen(true);
   };
@@ -35,9 +33,9 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -70,51 +68,57 @@ const Navbar = () => {
           <div className="item">
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
+              <div className="triangle-right"></div>
                 Home
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
+              <div className="triangle-right"></div>
                 About
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
+              <div className="triangle-right"></div>
                 Services
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
+              <div className="triangle-right"></div>
                 Pricing & Plans
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
+              <div className="triangle-right"></div>
                 Example Projects
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
+                <div className="triangle-right"></div>
                 Contact
               </a>
             </div>
             <div className="dropdown">
               <a className="dropbtn" href="localhost:3000/">
+              <div className="triangle-right"></div>
                 Request a Quote
               </a>
             </div>
           </div>
-          <div  onClick={handleSearchIconClick}>
-        <FontAwesomeIcon icon={faSearch} />
-      </div>
-      {isSearchOpen && (
-        <div className="search-bar">
-         <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+          <div onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}>
+            <FontAwesomeIcon icon={faSearch} />
+            {isDropdownOpen && (
+        <div className="dropdown-menu">
+          
+          eeeeeeeeeeeeeeeeeee
         </div>
       )}
+          </div>
+
           <div className="close" onClick={handleCloseClick}>
             <FontAwesomeIcon icon={faCircleXmark} />
           </div>
