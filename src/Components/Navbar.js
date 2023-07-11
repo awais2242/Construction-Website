@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
   faCircleXmark,
-  faBars,
+  faList,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../images/logo.png";
 
@@ -78,7 +78,7 @@ const Navbar = () => {
         <FontAwesomeIcon
           className="menu-button"
           onClick={handleButtonClick}
-          icon={faBars}
+          icon={faList}
         />
       </div>
       <div className={`container ${isContainerOpen ? "open" : ""}`}>
